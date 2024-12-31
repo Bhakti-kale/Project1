@@ -5,9 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class LaunchQuit 
+public class LaunchQuit extends Listner_logic
 {
-	WebDriver driver;
+	//WebDriver driver;
 	@BeforeMethod
 	public void launch()
 	{

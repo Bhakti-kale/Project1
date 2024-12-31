@@ -4,14 +4,16 @@ package test;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import source.HomePage;
 import source.LoginPage;
 import source.RegistrationPage;
-
+@Listeners(Listner_logic.class)
 public class Testcase1 extends LaunchQuit
 {
+	
 	@Test(retryAnalyzer=test.RetryLogic.class)
 	public void login_to_amazon() throws InterruptedException, EncryptedDocumentException, IOException 
 	{
@@ -24,8 +26,15 @@ public class Testcase1 extends LaunchQuit
         reg.mobno_meth();
         reg.pass_meth();
         reg.verifymob_meth();
-        Thread.sleep(10000);
-//        reg.otp_meth();
+//        reg.verifyCode();
+//        String txt1= reg.getmsg();
+//        Assert.assertEquals(true, txt1.contains("User can register."), "assertion fail");
+//        
+//     
+       
+      
+               //Thread.sleep(10000);
+//      reg.otp_meth();
 //        Thread.sleep(10000);
 //       reg.createacc_meth();
 //		Thread.sleep(10000);

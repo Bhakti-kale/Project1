@@ -5,6 +5,19 @@
     <classes>
       <class name="test.Testcase1"/>
       <class name="test.Testcase2"/>
+      <class name="test.Testcase3"/>
+      <class name="test.Testcase4"/>
+      <class name="test.Testcase5"/>
+      <class name="test.Testcase6"/>
+      <class name="test.Testcase7"/>
+      <class name="test.Testcase8"/>
+      <class name="test.Testcase9"/>
+      <class name="test.Testcase10"/>
+      <class name="test.Testcase11"/>
+      <class name="test.Testcase12"/>
+      <class name="test.Testcase13"/>
+      <class name="test.Testcase14"/>
+      <class name="test.Testcase15"/>
      
       
     </classes>

@@ -3,83 +3,69 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test.Testcase2">
-        <methods>
-          <include name="login_to_amazon"/>
-          <include name="quit"/>
-          <include name="launch"/>
-        </methods>
-      </class> <!-- test.Testcase2 -->
-      <class name="test.Testcase7">
-        <methods>
-          <include name="quit"/>
-          <include name="launch"/>
-          <include name="product_details"/>
-        </methods>
-      </class> <!-- test.Testcase7 -->
-      <class name="test.Testcase15">
-        <methods>
-          <include name="cart_without_login"/>
-          <include name="launch"/>
-          <include name="quit"/>
-        </methods>
-      </class> <!-- test.Testcase15 -->
-      <class name="test.Testcase3">
+      <class name="test.Testcase1">
         <methods>
           <include name="login_to_amazon"/>
           <include name="launch"/>
           <include name="quit"/>
         </methods>
-      </class> <!-- test.Testcase3 -->
-      <class name="test.Testcase13">
-        <methods>
-          <include name="apply_coupon_code"/>
-          <include name="launch"/>
-          <include name="quit"/>
-        </methods>
-      </class> <!-- test.Testcase13 -->
-      <class name="test.Testcase9">
-        <methods>
-          <include name="launch"/>
-          <include name="quit"/>
-          <include name="add_to_cart"/>
-        </methods>
-      </class> <!-- test.Testcase9 -->
+      </class> <!-- test.Testcase1 -->
       <class name="test.Testcase8">
         <methods>
           <include name="sort_product"/>
-          <include name="launch"/>
           <include name="quit"/>
+          <include name="launch"/>
         </methods>
       </class> <!-- test.Testcase8 -->
+      <class name="test.Testcase13">
+        <methods>
+          <include name="apply_coupon_code"/>
+          <include name="quit"/>
+          <include name="launch"/>
+        </methods>
+      </class> <!-- test.Testcase13 -->
+      <class name="test.Testcase12">
+        <methods>
+          <include name="select_pay_method"/>
+          <include name="quit"/>
+          <include name="launch"/>
+        </methods>
+      </class> <!-- test.Testcase12 -->
       <class name="test.Testcase6">
         <methods>
-          <include name="launch"/>
           <include name="quit"/>
+          <include name="launch"/>
           <include name="search_with_filter"/>
         </methods>
       </class> <!-- test.Testcase6 -->
       <class name="test.Testcase14">
         <methods>
-          <include name="launch"/>
           <include name="give_ratings"/>
           <include name="quit"/>
+          <include name="launch"/>
         </methods>
       </class> <!-- test.Testcase14 -->
+      <class name="test.Testcase11">
+        <methods>
+          <include name="quit"/>
+          <include name="launch"/>
+          <include name="validate_checkout_proc"/>
+        </methods>
+      </class> <!-- test.Testcase11 -->
       <class name="test.Testcase10">
+        <methods>
+          <include name="launch"/>
+          <include name="quit"/>
+          <include name="updatequant_removitem"/>
+        </methods>
+      </class> <!-- test.Testcase10 -->
+      <class name="test.Testcase9">
         <methods>
           <include name="quit"/>
           <include name="launch"/>
           <include name="add_to_cart"/>
         </methods>
-      </class> <!-- test.Testcase10 -->
-      <class name="test.Testcase11">
-        <methods>
-          <include name="launch"/>
-          <include name="quit"/>
-          <include name="validate_checkout_proc"/>
-        </methods>
-      </class> <!-- test.Testcase11 -->
+      </class> <!-- test.Testcase9 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

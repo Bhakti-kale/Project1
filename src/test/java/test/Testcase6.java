@@ -4,13 +4,14 @@ package test;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import source.HomePage;
 import source.LoginPage;
 import source.Product1Page;
 import source.SerachResultPage;
-
+@Listeners(Listner_logic.class)
 public class Testcase6 extends LaunchQuit
 {
 	@Test(retryAnalyzer=test.RetryLogic.class)

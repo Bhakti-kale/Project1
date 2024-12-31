@@ -4,12 +4,13 @@ package test;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import source.HomePage;
 import source.LoginPage;
 import source.Product1Page;
-
+@Listeners(Listner_logic.class)
 public class Testcase9 extends LaunchQuit
 {
 	@Test(retryAnalyzer=test.RetryLogic.class)
@@ -26,8 +27,10 @@ public class Testcase9 extends LaunchQuit
 		Product1Page prodpage=new Product1Page(driver);
 		prodpage.product(driver);
 		Thread.sleep(3000);
-		prodpage.closepopup();
-		Thread.sleep(3000);
 		prodpage.addtocart();
+		Thread.sleep(3000);
+//		prodpage.closepopup();
+//		Thread.sleep(3000);
+		
 }
 }

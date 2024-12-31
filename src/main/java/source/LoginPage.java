@@ -20,6 +20,8 @@ public class LoginPage
 	@FindBy(id="continue") WebElement continue_button;
 	@FindBy(name="password") WebElement password;
 	@FindBy(id="signInSubmit") WebElement signin_button;
+	
+	@FindBy(xpath="//span[contains(text(),'Your password is incorrect')]") WebElement errormsg;
 
 	
 	//step 2
@@ -40,7 +42,7 @@ public class LoginPage
 		FileInputStream f1= new FileInputStream("C:\\Users\\Bhakti\\eclipse-workspace\\Project1\\ExcelSheet\\Credentials.xlsx");//let java knows location of excel sheet with help of fileinput stream class
 		Workbook w1=	WorkbookFactory.create(f1);//to open excel sheet f1
 		//String un1=	NumberToTextConverter.toText(w1.getSheet("login").getRow(1).getCell(0).getNumericCellValue());
-		String un=	w1.getSheet("login").getRow(1).getCell(0).getStringCellValue();
+		String un=	w1.getSheet("login").getRow(2).getCell(0).getStringCellValue();
 		String pass=	w1.getSheet("login").getRow(2).getCell(1).getStringCellValue();
 		username.sendKeys(un);	
 		continue_button.click();
@@ -59,6 +61,20 @@ public class LoginPage
 	public void signin()
 	{
 		signin_button.click();
+	}
+	public String errormsg_meth()
+	{
+		String errmsg= errormsg.getText();
+		return errmsg;
+		
+		
+//		if(errormsg.isDisplayed())
+//		{
+//			System.out.println("Test case passed with incorrect id or pass");
+//		}
+//		else {
+//			System.out.println("tc failed");
+//		}
 	}
 	//step 3
 	public LoginPage(WebDriver driver)

@@ -22,9 +22,11 @@ public class HomePage
 	@FindBy(xpath="//button[.='Manage Profiles']") WebElement manageProfile;
 	@FindBy(xpath="//span[.='Your Account']") WebElement youraccount;
 	@FindBy(id="nav-orders") WebElement returnandorder;
-	@FindBy(xpath="//select[@class='a-native-dropdown a-declarative']") WebElement sortby;
-	
+	@FindBy(xpath="//select[@class='a-native-dropdown a-declarative']") WebElement sortby;	
 	@FindBy(xpath="//span[@class='a-price']") List<WebElement> allprices;
+	@FindBy(xpath = "//span[@id='nav-link-accountList-nav-line-1']") WebElement userprofile;
+	
+	
 	//step 2
 	public void accountandlist_hoverhover(WebDriver driver)
 	{
@@ -68,6 +70,12 @@ public class HomePage
 	}
 	
 
+	public String user_profile() {
+		String t1 = userprofile.getText();
+		return t1;
+	}
+	
+	
 	
 	//step 3
 	public HomePage(WebDriver driver)

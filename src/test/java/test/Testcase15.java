@@ -1,12 +1,13 @@
 //15.reach till cart page without login in amazon application---add to cart not working
 package test;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import source.HomePage;
 import source.Product1Page;
 import source.ShoppingCart;
-
+@Listeners(Listner_logic.class)
 public class Testcase15 extends LaunchQuit 
 {
 	@Test(retryAnalyzer=test.RetryLogic.class)

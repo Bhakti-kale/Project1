@@ -16,11 +16,11 @@ public class SerachResultPage
 	public void deliveryday_meth()
 	{
 		deliveryday.click();
-		boolean b5=deliveryday.isDisplayed();
-		if(b5=true)
-		{
-			System.out.println("filtered correctly");
-		}
+//		boolean b5=deliveryday.isDisplayed();
+//		if(b5=true)
+//		{
+//			System.out.println("filtered correctly");
+//		}
 	}
 	public void costReview_meth()
 	{

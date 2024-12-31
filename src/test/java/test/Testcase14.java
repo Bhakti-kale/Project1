@@ -4,6 +4,7 @@ package test;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import source.HomePage;
@@ -12,10 +13,10 @@ import source.OrdersPage;
 import source.Product1Page;
 import source.ReviewPage;
 import source.ShoppingCart;
-
+@Listeners(Listner_logic.class)
 public class Testcase14 extends LaunchQuit
 {
-	@Test//(retryAnalyzer=test.RetryLogic.class)
+	@Test(retryAnalyzer=test.RetryLogic.class)
 	public void give_ratings() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		HomePage home=new HomePage(driver);
