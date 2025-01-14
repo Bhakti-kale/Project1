@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegistrationPage 
+public class RegistrationPage extends Excel_data
 {
 	@FindBy(xpath="//input[@id='ap_customer_name']") WebElement name;
 	@FindBy(xpath="//input[@id='ap_phone_number']") WebElement mobno;
@@ -18,15 +18,15 @@ public class RegistrationPage
 	
 	public void name_meth()
 	{
-		name.sendKeys("Bhakti");
+		name.sendKeys(fullnamevalue);
 	}
 	public void mobno_meth()
 	{
-		mobno.sendKeys("9420268051");
+		mobno.sendKeys(mobilenumbervalue);
 	}
 	public void pass_meth()
 	{
-		pass.sendKeys("Dnyanada@123");
+		pass.sendKeys(passwordvalue);
 	}
 	public void verifymob_meth()
 	{

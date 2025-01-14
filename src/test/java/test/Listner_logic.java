@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestContext;
@@ -14,7 +15,7 @@ import org.testng.Reporter;
 
 public class Listner_logic implements ITestListener
 {
-	static ChromeDriver driver;  
+	static WebDriver driver;  
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -34,7 +35,8 @@ public class Listner_logic implements ITestListener
 		// TODO Auto-generated method stub
 		ITestListener.super.onTestFailure(result);
 		Reporter.log("TestCase is failed");
-		TakesScreenshot t1 =   driver;
+		TakesScreenshot t1 =   (TakesScreenshot) driver;
+		
 		File Source = t1.getScreenshotAs(OutputType.FILE);
 		File destination = new File("C:\\Users\\Bhakti\\eclipse-workspace\\Project1\\Screenshots\\fail\\photo" + Math.random() + ".png");
 		try {

@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage 
+public class LoginPage extends Excel_data
 {
 	WebDriver driver;
 	//step 1
@@ -25,39 +25,22 @@ public class LoginPage
 
 	
 	//step 2
-	public void un() throws EncryptedDocumentException, IOException
+	public void un()
 	{
-		FileInputStream f1= new FileInputStream("C:\\Users\\Bhakti\\eclipse-workspace\\Project1\\ExcelSheet\\Credentials.xlsx");//let java knows location of excel sheet with help of fileinput stream class
-		Workbook w1=	WorkbookFactory.create(f1);//to open excel sheet f1
-		//String un1=	NumberToTextConverter.toText(w1.getSheet("login").getRow(1).getCell(0).getNumericCellValue());
-		String un=	w1.getSheet("login").getRow(1).getCell(0).getStringCellValue();
-		String pass=	w1.getSheet("login").getRow(1).getCell(1).getStringCellValue();
-		username.sendKeys(un);	
-		continue_button.click();
-		password.sendKeys(pass);
-		System.out.println("This is my username-->"+un);
+		username.sendKeys(name);
 	}
-	public void incorrectun() throws EncryptedDocumentException, IOException
+	public void cnt()
 	{
-		FileInputStream f1= new FileInputStream("C:\\Users\\Bhakti\\eclipse-workspace\\Project1\\ExcelSheet\\Credentials.xlsx");//let java knows location of excel sheet with help of fileinput stream class
-		Workbook w1=	WorkbookFactory.create(f1);//to open excel sheet f1
-		//String un1=	NumberToTextConverter.toText(w1.getSheet("login").getRow(1).getCell(0).getNumericCellValue());
-		String un=	w1.getSheet("login").getRow(2).getCell(0).getStringCellValue();
-		String pass=	w1.getSheet("login").getRow(2).getCell(1).getStringCellValue();
-		username.sendKeys(un);	
 		continue_button.click();
-		password.sendKeys(pass);
-		System.out.println("This is my pass-->"+pass);
 	}
-//	public void cnt()
-//	{
-//		continue_button.click();
-//	}
-//	public void pwd()
-//	{
-//		password.sendKeys(pass);
-//		
-//	}
+	public void pwd()
+	{
+		password.sendKeys(pass);
+	}
+	public void incorrectpwd()
+	{
+		password.sendKeys(pass2);
+	}
 	public void signin()
 	{
 		signin_button.click();

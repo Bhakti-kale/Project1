@@ -21,7 +21,7 @@ public class Product1Page
 	@FindBy(xpath="//input[@id='add-to-cart-button']") WebElement addcart;
 	//input[@id='buy-now-button']
 	@FindBy(xpath="//input[@id='buy-now-button']") WebElement buynow;
-	
+	@FindBy(xpath="//input[@name='proceedToRetailCheckout']") WebElement proceedtobuy;
 	//product details--it is there on productdetailspage
 	
 
@@ -59,6 +59,10 @@ public class Product1Page
 	public void buynow_meth()
 	{
 		buynow.click();
+	}
+	public void proceedtobuy_meth()
+	{
+		proceedtobuy.click();
 	}
 	
 	//step 3

@@ -1,49 +1,73 @@
 package source;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutPage 
 {
 	WebDriver driver;
-	//step 1
-	@FindBy(xpath="//a[contains(text(),'Change')]") WebElement addsel;
-	@FindBy(xpath="(//input[@type='radio'])[3]") WebElement seladdr;
-	@FindBy(xpath="(//span[@class='a-button-inner'])[2]") WebElement deltothisaddress;
-	@FindBy(xpath="//a[contains(text(),'Change')]") WebElement changeaddbutt;
-	@FindBy(xpath="((//i[@class='a-icon a-icon-radio'])[2]") WebElement seladd;
+	//step 1	
+	@FindBy(xpath="(//input[@type='submit'])[2]") WebElement deltothisaddress;
+	@FindBy(xpath="//a[normalize-space()='Change']") WebElement changeaddbutt;
 	@FindBy(xpath="//span[@id='shipToThisAddressButton']") WebElement usethisaddr;
+	@FindBy(xpath="//a[@id='prime-interstitial-nothanks-button']") WebElement nothanks;
+	
 	@FindBy(xpath="") WebElement paymeth;
 	@FindBy(xpath="") WebElement ordereview;
 	
 	//payment methods
-	@FindBy(xpath="//a[@id='payChangeButtonId']") WebElement changepaybutt;
+	@FindBy(xpath="//a[@aria-label='Change payment method']") WebElement changepaybutt;
 	@FindBy(xpath="//input[@value='SelectableAddCreditCard']") WebElement credebCard;
 	@FindBy(xpath="//input[@value='instrumentId=NetBanking&isExpired=false&paymentMethod=NB&tfxEligible=false']") WebElement netbank;
 	@FindBy(xpath="//input[@value='instrumentId=amzn1.pm.poa.YW16bjEucG9hOmFtem4xLnBvYS5wb2RhLlVuaWZpZWRQYXltZW50c0ludGVyZmFjZTox.QTEzMzlWVDA1MTNIQg&isExpired=false&paymentMethod=UnifiedPaymentsInterface&tfxEligible=false']") WebElement otherUPI;
 	@FindBy(xpath="//input[@value='instrumentId=0h_PE_CUS_18b1c868-2e63-40e2-8b24-414fe05d88c8%2FCash&isExpired=false&paymentMethod=COD&tfxEligible=false']") WebElement cod;
 	@FindBy(xpath="//input[@value='instrumentId=EMI&isExpired=false&paymentMethod=CC&tfxEligible=false']") WebElement emi;		
-	@FindBy(id="checkout-primary-continue-button-id-announc") WebElement usethispayment;
+	@FindBy(xpath="//input[@data-testid='bottom-continue-button']") WebElement usethispayment;
+	
 	@FindBy(xpath="//input[@placeholder='Enter Code']") WebElement entercode;
 	@FindBy(xpath="//input[@name='ppw-claimCodeApplyPressed']") WebElement apply;
 	
-    @FindBy(xpath="(//div[@class='a-row a-spacing-small'])[12]") WebElement reviewitem;		
+    @FindBy(xpath="//h2[@class='a-size-medium a-spacing-none address-promise-text a-text-bold']") WebElement reviewitem;		
 	
 	
 	//step 2
 
 	public void address_selection_meth() throws InterruptedException
 	{
-		addsel.click();
-		Thread.sleep(4000);
-		seladdr.click();
-		deltothisaddress.click();
-//		changeaddbutt.click();
-//		seladd.click();
-//		usethisaddr.click();
+		
+	changeaddbutt.click();	
+	Thread.sleep(7000);
+	deltothisaddress.click();
 	}
+	
+	public void nothanks_meth()
+	{
+		nothanks.click();
+	}
+	
+	public void delevertothisadd_meth() throws InterruptedException
+	{
+		try {
+			changeaddbutt.click();
+		}catch(NoSuchElementException e)
+		{
+			System.out.println("not present");
+		}
+		catch(Exception e)
+		{
+			System.out.println("not present");
+		}
+	
+	}
+	
 	public void payment_meth()
 	{
 		changepaybutt.click();
@@ -55,7 +79,9 @@ public class CheckoutPage
 	}
 	public void usethispayment_meth()
 	{
-		usethispayment.click();	
+		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(usethispayment)).click();
+		//usethispayment.click();	
 	}
 	public void entercode_meth()
 	{
@@ -65,33 +91,34 @@ public class CheckoutPage
 	{
 		apply.click();	
 	}
-	public void credebCard_meth()
+	public boolean credebCard_meth()
 	{
 		credebCard.click();
+		return credebCard.isSelected();
 	}
-	public void netbank_meth()
+	public boolean netbank_meth()
 	{
-		netbank.click();	
+		netbank.click();
+		return netbank.isSelected();
 	}
-	public void otherUPI_meth()
+	public boolean otherUPI_meth()
 	{
-		otherUPI.click();	
+		otherUPI.click();
+		return otherUPI.isSelected();
 	}
-	public void emi_meth()
+	public boolean emi_meth()
 	{
-		emi.click();	
+		emi.click();
+		return emi.isSelected();	
 	}
-	public void cod_meth()
+	public boolean cod_meth()
 	{
-		cod.click();	
+		cod.click();
+		return cod.isSelected();
 	}
-	public void reviewitem_meth()
+	public String reviewitem_meth()
 	{
-		boolean b1=reviewitem.isDisplayed();
-		if(b1=true)
-		{
-		System.out.println("order reviewd");
-		}
+		return reviewitem.getText();
 	}
 	
 	//step 3

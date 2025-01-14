@@ -16,6 +16,9 @@ public class ShoppingCart
 	@FindBy(xpath="(//input[@value='Delete'])[1]") WebElement remove;
 	@FindBy(xpath="//span[@class='a-icon a-icon-small-add']") WebElement quantity;
 	
+	@FindBy(xpath="//h1[@class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']") WebElement addedtocart;
+	
+	
 	
 
 	
@@ -33,6 +36,12 @@ public class ShoppingCart
 	public void quantity_meth()
 	{
 		quantity.click();
+		
+	}
+	public String addedtocart_meth()
+	{
+		String t1=addedtocart.getText();
+		return t1;
 		
 	}
 	//step 3

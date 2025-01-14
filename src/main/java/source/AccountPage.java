@@ -7,21 +7,28 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AccountPage 
 {
-	@FindBy(xpath="//span[.='Edit addresses for orders and gifts']") WebElement editaddress;
-	@FindBy(id="ya-myab-address-edit-btn-0") WebElement edit;
-	@FindBy(xpath="(//input[@class='a-button-input'])[3]") WebElement update;
+	
+	@FindBy(xpath="//h2[contains(text(),'Login & security')]") WebElement loginnsecurity;
+	@FindBy(xpath="//span[@id='NAME_BUTTON']") WebElement editname;
+	@FindBy(xpath="//input[@id=\"cnep_1C_submit_button\"]") WebElement savechanges;
+	@FindBy(xpath="//div[contains(text(),'Name updated.')]") WebElement updatemsg;
 
-	public void editaddress_meth()
+	public void loginnsecurity_meth()
 	{
-		editaddress.click();
+		loginnsecurity.click();
 	}
-	public void edit_meth()
+	public void editname_meth()
 	{
-        edit.click();
+		editname.click();
 	}
-	public void update_meth()
+	public void savechanges_meth()
 	{
-        update.click();
+		savechanges.click();
+	}
+	public String updatemsg_meth()
+	{
+		String txt= updatemsg.getText();
+		return txt;
 	}
 	
 	public AccountPage(WebDriver driver)

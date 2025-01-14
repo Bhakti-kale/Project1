@@ -1,24 +1,54 @@
 package test;
 
-import org.openqa.selenium.WebDriver;
+
+import java.time.Duration;
+
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
 
 public class LaunchQuit extends Listner_logic
 {
-	//WebDriver driver;
+	@Parameters("browser")
+	
 	@BeforeMethod
-	public void launch()
+	public void launch(@Optional("edge") String browsername) throws InterruptedException
 	{
+		if(browsername.equals("chrome"))
+		{
 	    driver=new ChromeDriver();
 		driver.get("https://www.amazon.in");
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		}
+
+		if(browsername.equals("edge"))
+		{
+	    driver=new EdgeDriver();
+		driver.get("https://www.amazon.in");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		}
+		if(browsername.equals("firefox"))
+		{
+	    driver=new FirefoxDriver();
+		driver.get("https://www.amazon.in");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		}
+				
 	}
 	@AfterMethod
-	public void quit()
+	public void quit() throws InterruptedException
 	{
-	//	driver.quit();
+		driver.close();
+		
 	}
 
 }

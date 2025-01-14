@@ -22,8 +22,12 @@ public class HomePage
 	@FindBy(xpath="//button[.='Manage Profiles']") WebElement manageProfile;
 	@FindBy(xpath="//span[.='Your Account']") WebElement youraccount;
 	@FindBy(id="nav-orders") WebElement returnandorder;
+	
 	@FindBy(xpath="//select[@class='a-native-dropdown a-declarative']") WebElement sortby;	
+	@FindBy(xpath="//a[.='Price: Low to High']") WebElement sortbypricelowtohigh;
+	@FindBy(xpath="//a[.='Newest Arrivals']") WebElement sortbynewarrival;
 	@FindBy(xpath="//span[@class='a-price']") List<WebElement> allprices;
+	
 	@FindBy(xpath = "//span[@id='nav-link-accountList-nav-line-1']") WebElement userprofile;
 	
 	
@@ -43,7 +47,7 @@ public class HomePage
 		search_tf.sendKeys("shoe"+Keys.ENTER);
 	}
 	public void starthere_meth()
-	{
+	{ 
 		starthere.click();
 	}
 	public void manageProfile_meth()
@@ -62,11 +66,15 @@ public class HomePage
 	{
 		
 		Select s1=new Select(sortby);
+		s1.selectByVisibleText("Newest Arrivals");
+		Thread.sleep(3000);
+		s1.selectByVisibleText("Avg. Customer Review");
+		Thread.sleep(3000);
+		s1.selectByVisibleText("Price: High to Low");
+		Thread.sleep(3000);
 		s1.selectByVisibleText("Price: Low to High");
+		Thread.sleep(5000);
 		
-		//s1.selectByVisibleText("Price: High to Low");
-		//Thread.sleep(5000);
-		//s1.selectByVisibleText("Avg. Customer Review");
 	}
 	
 
