@@ -11,13 +11,20 @@
           <include name="launch"/>
         </methods>
       </class> <!-- test.Testcase1 -->
-      <class name="test.Testcase4">
+      <class name="test.Testcase5">
+        <methods>
+          <include name="launch"/>
+          <include name="quit"/>
+          <include name="login_to_amazon_search_a_product"/>
+        </methods>
+      </class> <!-- test.Testcase5 -->
+      <class name="test.Testcase14">
         <methods>
           <include name="quit"/>
           <include name="launch"/>
-          <include name="edit_profile_info"/>
+          <include name="give_ratings"/>
         </methods>
-      </class> <!-- test.Testcase4 -->
+      </class> <!-- test.Testcase14 -->
       <class name="test.Testcase7">
         <methods>
           <include name="quit"/>
@@ -25,34 +32,6 @@
           <include name="product_details"/>
         </methods>
       </class> <!-- test.Testcase7 -->
-      <class name="test.Testcase3">
-        <methods>
-          <include name="login_to_amazon"/>
-          <include name="launch"/>
-          <include name="quit"/>
-        </methods>
-      </class> <!-- test.Testcase3 -->
-      <class name="test.Testcase10">
-        <methods>
-          <include name="launch"/>
-          <include name="quit"/>
-          <include name="updatequant_removitem"/>
-        </methods>
-      </class> <!-- test.Testcase10 -->
-      <class name="test.Testcase6">
-        <methods>
-          <include name="quit"/>
-          <include name="launch"/>
-          <include name="search_with_filter"/>
-        </methods>
-      </class> <!-- test.Testcase6 -->
-      <class name="test.Testcase13">
-        <methods>
-          <include name="apply_coupon_code"/>
-          <include name="launch"/>
-          <include name="quit"/>
-        </methods>
-      </class> <!-- test.Testcase13 -->
       <class name="test.Testcase8">
         <methods>
           <include name="sort_product"/>
@@ -60,13 +39,13 @@
           <include name="launch"/>
         </methods>
       </class> <!-- test.Testcase8 -->
-      <class name="test.Testcase2">
+      <class name="test.Testcase11">
         <methods>
-          <include name="launch"/>
           <include name="quit"/>
-          <include name="login_to_amazon"/>
+          <include name="launch"/>
+          <include name="validate_checkout_proc"/>
         </methods>
-      </class> <!-- test.Testcase2 -->
+      </class> <!-- test.Testcase11 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
