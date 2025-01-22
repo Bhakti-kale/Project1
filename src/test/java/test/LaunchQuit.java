@@ -17,7 +17,7 @@ public class LaunchQuit extends Listner_logic
 	@Parameters("browser")
 	
 	@BeforeMethod
-	public void launch(@Optional("edge") String browsername) throws InterruptedException
+	public void launch(String browsername) throws InterruptedException
 	{
 		if(browsername.equals("chrome"))
 		{
